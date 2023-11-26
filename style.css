@@ -1,0 +1,139 @@
+@font-face {
+    font-family: "mingliu";
+    src: url("R-PMingLiU-TW-2.woff") format("woff"),
+}
+
+* {
+    margin: 0;
+}
+
+.full {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fullpic {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+}
+
+.door {
+    display: block;
+    margin: auto;
+    margin-top: calc(48vh - 82px);
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    width: 80px;
+}
+
+.blogbutton {
+    position: fixed; 
+    left: 20px; 
+    top: 20px; 
+    width: 110px; 
+    cursor: pointer;
+}
+
+.blogholder {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.blog {
+    display: block;
+    margin: auto;
+    z-index: 3;
+    position: relative;
+    width: 60%;
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+.cross {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.blogtxt {
+    background-color: black;
+    color: white;
+    width: calc(100% - 32px);
+    height: 60vh;
+    font-family: mingliu;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-top: -3px;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 12px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #c9c9c9; 
+    border: 1px solid #f0f0f0;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.windowsize {
+    display: none;
+    background-color: rgb(21, 21, 21);
+    color: rgb(240, 240, 240);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    font-family: mingliu;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1250px) {
+    .windowsize {
+        display: flex;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .windowsize {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .windowsize {
+        font-size: 20px;
+    }
+}
