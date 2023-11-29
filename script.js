@@ -12,7 +12,7 @@ $("#indexdoor").click(function(){
     var Num = Math.floor(Math.random() * 5);
     var output = result [Num];
     // console.log(output);
-    window.location.href = "file:///Users/valia/Documents/GitHub/Moon-Bound-Express/" + output + ".html";
+    window.location.href = "" + output + ".html";
 });
 
 $(".cross").click(function(){
