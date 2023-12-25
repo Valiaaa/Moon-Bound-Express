@@ -120,6 +120,13 @@
     align-items: center;
 }
 
+.overlay {
+    height:0px;
+    overflow:visible;
+    pointer-events:none;
+    background: none !important;
+}
+
 @media screen and (max-width: 1250px) {
     .windowsize {
         display: flex;
