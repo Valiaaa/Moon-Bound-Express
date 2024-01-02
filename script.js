@@ -30,5 +30,4 @@ $(document).on('click', function (event) {
     } else {}
 });
 
-
 });

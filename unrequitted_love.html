@@ -24,6 +24,12 @@
             background-size: 100% 100%;
             overflow: hidden;
         }
+
+        .bg2 {
+        background-image: url("unrequitted_love/background_metal.png");
+        width: 0;
+        height: 0;
+        }
     </style>
 
     <body>
@@ -50,17 +56,28 @@
         </div>
 
 
+        <div class="bg2"></div>
         <a href="index.html" style="width:fit-content; display: block; margin: auto;"><img src="unrequitted_love/door.png" class="door"></a>
         <img src="unrequitted_love/table.png" style="position: fixed; left: calc(47.3% - 200px); top: calc(82% - 150px); width: 400px;">
         <img src="unrequitted_love/chair1.png" style="position: fixed; left: calc(33% - 69px); top: calc(79% - 107px); width: 124px;">
         <img src="unrequitted_love/chair2.png" style="position: fixed; right: calc(33% - 69px); top: calc(79% - 107px); width: 118px;">
 
-        <img src="unrequitted_love/flower1.png" style="position: fixed; left: 0; bottom: 0; width: 198px;">
-        <img src="unrequitted_love/flower4.png" style="position: fixed; right: 0; bottom: 0; width: 282px; z-index: -2;">
-        <img src="unrequitted_love/flower3.png" style="position: fixed; right: calc(22% - 81px); top: calc(59% - 120px); width: 162px;">
-        <img src="unrequitted_love/flower2.png" style="position: fixed; left: calc(22% - 81px); top: calc(62% - 120px); width: 162px;">
+        <img src="unrequitted_love/flower1.png" style="position: fixed; left: 0; bottom: 0; width: 198px;" class="flower">
+        <img src="unrequitted_love/flower4.png" style="position: fixed; right: 0; bottom: 0; width: 282px;" class="flower">
+        <img src="unrequitted_love/flower3.png" style="position: fixed; right: calc(22% - 81px); top: calc(59% - 120px); width: 162px;" class="flower">
+        <img src="unrequitted_love/flower2.png" style="position: fixed; left: calc(22% - 81px); top: calc(62% - 120px); width: 162px;" class="flower">
 
 
-        <img src="unrequitted_love/chain.png" class="full fullpic">
+        <div class="overlay">
+            <img src="unrequitted_love/chain.png" class="full fullpic" style="z-index:2;">
+        </div>
     </body>
+
+    <script>
+        $('.flower').hover(function (){
+            $('body').css("background-image", "url('unrequitted_love/background_metal.png')");
+        }, function() {
+            $('body').css("background-image", "url('unrequitted_love/background.png')");
+        });
+    </script>
 </html>
