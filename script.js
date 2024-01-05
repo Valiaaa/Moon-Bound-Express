@@ -30,4 +30,11 @@ $(document).on('click', function (event) {
     } else {}
 });
 
+$(document).mousemove(function(e) {
+    setTimeout(function() {
+      $('#shanshan').css({'left': e.pageX + 48 + 'px', 'top': e.pageY + 200 + 'px'});
+    }, 120); // 500 milliseconds (0.5 seconds) delay
+  });
+
+
 });
