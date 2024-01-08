@@ -51,8 +51,32 @@
 
         <a href="hall.html" style="width:fit-content; display: block; margin: auto;"><img src="troubled_by_the_moon/door.png" class="door" style="display: none;"></a>
         <img src="troubled_by_the_moon/table.png" style="position: fixed; left: calc(30vw - 170px); bottom: calc(22vh - 110px); width: 340px;">
-        <img src="troubled_by_the_moon/radio.png" style="position: fixed; right: calc(30vw - 220px); bottom: calc(34vh - 200px); width: 500px;">
+        <img src="troubled_by_the_moon/radio.png" style="position: fixed; right: calc(28vw - 220px); bottom: calc(34vh - 200px); width: 560px;">
+
+        <img src="troubled_by_the_moon/rock1.png" style="position: fixed; left: calc(24vw - 30px); bottom: calc(38vh - 20px); width: 60px;">
+        <img src="troubled_by_the_moon/rock2.png" style="position: fixed; left: calc(30vw - 30px); bottom: calc(36vh - 20px); width: 30px;">
+        <img src="troubled_by_the_moon/rock3.png" style="position: fixed; left: calc(34.5vw - 30px); bottom: calc(39vh - 20px); width: 45px;">
+        <img src="troubled_by_the_moon/rock4.png" style="position: fixed; left: calc(38.5vw - 30px); bottom: calc(38vh - 20px); width: 35px;">
+
+        <img src="troubled_by_the_moon/metal2.png" style="position: fixed; left: calc(30vw - 40px); bottom: calc(57vh - 80px); width: 86px;">
+        <img src="troubled_by_the_moon/metal3.png" style="position: fixed; right: calc(28vw - 40px); bottom: calc(71vh - 80px); width: 64px;">
+
+
+        <div id="metalfunc">
+            <img src="troubled_by_the_moon/metal1.png" style="position: fixed; right: calc(35vw - 50px); bottom: calc(18vh - 100px); width: 110px;" id="metal">
+            <a href="hall.html" style="width:fit-content; display: block; margin: auto;"><img src="troubled_by_the_moon/door.png" class="door" style="display: none; position: fixed; right: calc(35vw - 48px); bottom: calc(18vh - 80px); width: 104px;" id="thedoor"></a>
+        </div>
 
 
     </body>
+
+    <script>
+        $("#metalfunc").hover(function(){
+            $('#metal').css("display","none");
+            $('#thedoor').css("display","block");
+        }, function() {
+            $('#metal').css("display","block");
+            $('#thedoor').css("display","none");
+        });
+    </script>
 </html>
