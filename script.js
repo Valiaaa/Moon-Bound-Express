@@ -37,4 +37,14 @@ $(document).mousemove(function(e) {
   });
 
 
+ // Check if the current URL ends with ".html"
+ if (currentUrl.endsWith(".html")) {
+    // Check if the slug is "index.html"
+    if (currentUrl.endsWith("index.html")) {
+        var newUrl = currentUrl.replace("index.html", "");
+    }
+  
+    window.history.replaceState({}, document.title, newUrl);
+}
+
 });

@@ -38,7 +38,7 @@
             <img src="hall/light_off.png" style="width: 230px; height: auto; position: fixed; top: calc(25vh - 115px)">
             <div style="width:72px; height:60px; position: fixed; top: calc(25vh - 31px)" class="hover" id="lightoff"></div>
         </div>
-        <img src="hall/door.png" class="door" style="cursor: not-allowed; opacity: 0.5;" id="lightdoor">
+        <img src="hall/door.png" class="door" id="indexdoor">
 
 
         <div style="display: none; align-items: center; justify-content: center;" id="darkmode">
@@ -48,9 +48,6 @@
         </div>
         <img src="hall/door_dark.png" class="door" style="display: none; cursor: not-allowed;" id="darkdoor">
         <img src="hall/bg_dark.png" class="full fullpic" style="display: none;" id="darkroom">
-
-
-        <img src="hall/door.png" class="door" id="indexdoor" style="display: none;">
     </body>
 
     <script>
@@ -58,7 +55,6 @@
             $('#darkroom').css("display","block");
             $('#darkmode').css("display","flex");
             $('#lightoff').css("display","none");
-            $('#lightdoor').css("display","none");
             $('#darkdoor').css("display","block");
             $('#indexdoor').css("display","none");
         });
