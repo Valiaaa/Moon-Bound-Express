@@ -43,10 +43,6 @@ $("#indexdoor").click(function() {
     window.location.href = output + ".html";
 });
 
-// Output the array
-console.log(result);
-
-
 $(".cross").click(function(){
     $('.blogholder').hide();
 });
