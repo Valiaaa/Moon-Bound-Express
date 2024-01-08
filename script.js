@@ -2,14 +2,15 @@ $(document).ready(function(){
 
 $("#indexdoor").click(function(){
     var output;
-    var result = Array(5);
+    var result = Array(6);
     result[0] = "osmanthus_honey_brew";
     result[1] = "under_the_umbrella";
     result[2] = "unrequitted_love";
     result[3] = "troubled_by_the_moon";
     result[4] = "well-intentioned";
+    result[5] = "four_hundred_dollars";
 
-    var Num = Math.floor(Math.random() * 5);
+    var Num = Math.floor(Math.random() * 6);
     var output = result [Num];
     // console.log(output);
     window.location.href = "" + output + ".html";
