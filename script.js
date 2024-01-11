@@ -16,6 +16,7 @@ $(document).ready(function(){
 //     window.location.href = "" + output + ".html";
 // });
 
+
 // Retrieve the last room from localStorage
 var lastRoom = localStorage.getItem('lastRoom');
 
