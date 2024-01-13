@@ -142,6 +142,20 @@
     cursor: pointer;
 }
 
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0); /* Initial and final position */
+    }
+    50% {
+      transform: translateY(-10px); /* Move up */
+    }
+}
+
+
+
+
+
+
 @media screen and (max-width: 1250px) {
     .windowsize {
         display: flex;

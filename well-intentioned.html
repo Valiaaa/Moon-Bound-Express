@@ -24,6 +24,16 @@
             background-size: 100% 100%;
             overflow: hidden;
         }
+
+        #shanshan {
+            background-image: url("well-intentioned/dance.gif");
+            height: 390px;
+            width: 131px;
+        }
+
+        .bubble:hover {
+            animation: moveUpDown 3s infinite;
+        }
     </style>
 
     <body>
@@ -51,22 +61,55 @@
 
 
         <a href="hall.html" style="width:fit-content; display: block; margin: auto;"><img src="well-intentioned/door.png" class="door"></a>
-        <img src="well-intentioned/plant.png" style="position: fixed; left: calc(27.3% - 110px); top: calc(40% - 90px); width: 175px;">
-        <img src="well-intentioned/sofa.png" style="position: fixed; left: calc(20.5% - 200px); top: calc(65.8% - 107px); width: 480px;">
-        <img src="well-intentioned/trafficlight.png" style="position: fixed; right: calc(30% - 25px); top: calc(28% - 107px); width: 54px;">
+        <img src="well-intentioned/plant_small.gif" style="position: fixed; left: calc(27.3% - 110px); top: calc(40% - 90px); width: 175px;">
+        <img src="well-intentioned/sofa_plain.png" style="position: fixed; left: calc(18.5% - 200px); top: calc(56% - 107px); width: 480px;" class="hover" id="sofa">
+        <img src="well-intentioned/sofa_person.png" style="position: fixed; left: calc(18.5% - 200px); top: calc(56% - 107px); width: 480px; opacity: 0;" id="sofap">
+        <img src="well-intentioned/traffic_plain.png" style="position: fixed; right: calc(30% - 25px); top: calc(28% - 107px); width: 102px;" id="traffic">
+        <img src="well-intentioned/traffic_person.png" style="position: fixed; right: calc(30% - 25px); top: calc(28% - 107px); width: 102px; opacity: 0;" id="trafficp">
 
-        <img src="well-intentioned/bubble1.png" style="position: fixed; left: 24.5vw; top: 34vh; width: 30px; z-index:-1;">
-        <img src="well-intentioned/bubble2.png" style="position: fixed; left: 33vw; top: 32vh; width: 30px;">
-        <img src="well-intentioned/bubble3.png" style="position: fixed; left: 36vw; top: 48vh; width: 28px;">
-        <img src="well-intentioned/bubble4.png" style="position: fixed; left: 40vw; top: 24vh; width: 30px;">
-        <img src="well-intentioned/bubble5.png" style="position: fixed; left: 56vw; top: 32.5vh; width: 30px;">
-        <img src="well-intentioned/bubble6.png" style="position: fixed; left: 61vw; top: 47vh; width: 28px;">
-        <img src="well-intentioned/bubble7.png" style="position: fixed; left: 64vw; top: 29vh; width: 30px;">
-        <img src="well-intentioned/bubble8.png" style="position: fixed; left: 73vw; top: 30vh; width: 30px;">
+        <img src="well-intentioned/bubble1.png" style="position: fixed; left: 24.5vw; top: 34vh; width: 30px; z-index:-1;" class="bubble">
+        <img src="well-intentioned/bubble2.png" style="position: fixed; left: 33vw; top: 32vh; width: 30px;" class="bubble">
+        <img src="well-intentioned/bubble3.png" style="position: fixed; left: 36vw; top: 48vh; width: 28px;" class="bubble">
+        <img src="well-intentioned/bubble4.png" style="position: fixed; left: 40vw; top: 24vh; width: 30px;" class="bubble">
+        <img src="well-intentioned/bubble5.png" style="position: fixed; left: 56vw; top: 32.5vh; width: 30px;" class="bubble">
+        <img src="well-intentioned/bubble6.png" style="position: fixed; left: 61vw; top: 47vh; width: 28px;" class="bubble">
+        <img src="well-intentioned/bubble7.png" style="position: fixed; left: 64vw; top: 29vh; width: 30px;" class="bubble">
+        <img src="well-intentioned/bubble8.png" style="position: fixed; left: 73vw; top: 30vh; width: 30px;" class="bubble">
 
 
-        <img src="well-intentioned/flame_fullscreen.png" class="full fullpic">
-        <img src="well-intentioned/leftdoor.png" style="position: fixed; left: 0; top: 0; height: 100vh;">
-        <img src="well-intentioned/rightdoor.png" style="position: fixed; right: 0; top: 0; height: 100vh;">
+        <img src="well-intentioned/leftdoor.png" style="position: fixed; left: 0; top: 0; height: 100vh; z-index: 3;">
+        <img src="well-intentioned/rightdoor.png" style="position: fixed; right: 0; top: 0; height: 100vh; z-index: 3;">
+        <div class="overlay">
+            <img src="well-intentioned/flame_fullscreen.png" class="full fullpic" style="z-index: 2;">
+        </div>
+
+        <div id="shanshan"></div>
+
     </body>
+
+    <script>
+    $('#sofap').mouseenter(function() {
+        $('#sofap').css("opacity", "100");
+        $('#sofa').css("opacity", "0");
+        $('#shanshan').css("opacity", "0");
+    });
+
+    $('#sofap').mouseleave(function() {
+        $('#sofap').css("opacity", "0");
+        $('#sofa').css("opacity", "100");
+        $('#shanshan').css("opacity", "100");
+    });
+
+    $('#trafficp').mouseenter(function() {
+        $('#trafficp').css("opacity", "100");
+        $('#traffic').css("opacity", "0");
+        $('#shanshan').css("opacity", "0");
+    });
+
+    $('#trafficp').mouseleave(function() {
+        $('#trafficp').css("opacity", "0");
+        $('#traffic').css("opacity", "100");
+        $('#shanshan').css("opacity", "100");
+    });
+    </script>
 </html>

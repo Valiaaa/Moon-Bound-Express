@@ -74,10 +74,12 @@
     </body>
 
     <script>
-        $('.flower').hover(function (){
-            $('body').css("background-image", "url('unrequitted_love/background_metal.png')");
-        }, function() {
-            $('body').css("background-image", "url('unrequitted_love/background.png')");
-        });
+    $('.flower').mouseenter(function() {
+        $('body').css("background-image", "url('unrequitted_love/background_metal.png')");
+    });
+
+    $('.flower').mouseleave(function() {
+        $('body').css("background-image", "url('unrequitted_love/background.png')");
+    });
     </script>
 </html>

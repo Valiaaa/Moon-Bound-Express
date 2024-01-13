@@ -18,10 +18,36 @@ $(document).ready(function(){
 
 
 // Retrieve the last room from localStorage
-var lastRoom = localStorage.getItem('lastRoom');
+// var lastRoom = localStorage.getItem('lastRoom');
+
+// $("#indexdoor").click(function() {
+//     var result = [
+//         "osmanthus_honey_brew",
+//         "under_the_umbrella",
+//         "unrequitted_love",
+//         "troubled_by_the_moon",
+//         "well-intentioned",
+//         "four_hundred_dollars"
+//     ];
+
+//     var Num;
+//     do {
+//         Num = Math.floor(Math.random() * result.length);
+//     } while (Num === parseInt(lastRoom));
+
+//     lastRoom = Num;
+
+//     // Store the last room in localStorage
+//     localStorage.setItem('lastRoom', lastRoom);
+
+//     var output = result[Num];
+//     window.location.href = output + ".html";
+// });
+
 
 $("#indexdoor").click(function() {
-    var result = [
+    // List of all possible pages
+    var allPages = [
         "osmanthus_honey_brew",
         "under_the_umbrella",
         "unrequitted_love",
@@ -30,19 +56,35 @@ $("#indexdoor").click(function() {
         "four_hundred_dollars"
     ];
 
-    var Num;
-    do {
-        Num = Math.floor(Math.random() * result.length);
-    } while (Num === parseInt(lastRoom));
+    // Get the list of visited pages from localStorage or initialize an empty array
+    var visitedPages = JSON.parse(localStorage.getItem('visitedPages')) || [];
 
-    lastRoom = Num;
+    // Filter out visited pages from the available options
+    var availablePages = allPages.filter(function(page) {
+        return !visitedPages.includes(page);
+    });
 
-    // Store the last room in localStorage
-    localStorage.setItem('lastRoom', lastRoom);
+    // If there are no available pages, reset the visitedPages array
+    if (availablePages.length === 0) {
+        visitedPages = [];
+        availablePages = allPages; // Refill the availablePages array
+    }
 
-    var output = result[Num];
-    window.location.href = output + ".html";
+    // Randomly select a page from the available options
+    var randomIndex = Math.floor(Math.random() * availablePages.length);
+    var selectedPage = availablePages[randomIndex];
+
+    // Update visited pages and store in localStorage
+    visitedPages.push(selectedPage);
+    localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+
+    // Redirect to the selected page
+    window.location.href = selectedPage + ".html";
 });
+
+
+
+
 
 $(".cross").click(function(){
     $('.blogholder').hide();
