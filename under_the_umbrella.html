@@ -18,11 +18,17 @@
 
     <style>
         body {
-            background-image: url("under_the_umbrella/background.png");
+            background-image: url("under_the_umbrella/bg.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
             overflow: hidden;
+        }
+
+        #shanshan {
+            background-image: url("under_the_umbrella/dance_small.gif");
+            height: 385px;
+            width: 139px;
         }
     </style>
 
@@ -51,10 +57,11 @@
 
         <a href="hall.html" style="width:fit-content; display: block; margin: auto;"><img src="under_the_umbrella/door.png" class="door"></a>
         <img src="under_the_umbrella/book.png" style="position: fixed; left: 0; bottom: 0; width: 560px;">
-        <img src="under_the_umbrella/sofa.png" style="position: fixed; left: 53vw; bottom: 25vh; width: 420px;">
+        <img src="under_the_umbrella/sofa_plain.png" style="position: fixed; left: 53vw; bottom: 25vh; width: 420px;" id="sofa">
+        <img src="under_the_umbrella/sofa_sit.png" style="position: fixed; left: 53vw; bottom: 25vh; width: 420px; opacity: 0;" id="sofap">
         <img src="under_the_umbrella/tvset.png" style="position: fixed; right: 0; bottom: 0; width: 280px;">
         <img src="under_the_umbrella/note.png" style="position: fixed; right: 4vw; top: 40vh; width: 90px;">
-        <img src="under_the_umbrella/floormirror.png" style="position: fixed; left: 44vw; bottom: 15vh; width: 290px;">
+        <img src="under_the_umbrella/floormirror.png" style="position: fixed; left: 44vw; bottom: 15vh; width: 290px; pointer-events: none;">
 
         <img src="under_the_umbrella/doodleflower2.gif" style="position: fixed; left: -1.5%; bottom: 0; width: 290px;">
         <img src="under_the_umbrella/doodleflower3.gif" style="position: fixed; right: 11vw; bottom: 0; width: 160px;">
@@ -65,5 +72,30 @@
             <img src="under_the_umbrella/rain_fullscreen.png" class="full fullpic" style="z-index: 2;">
         </div>
 
+        <div id="shanshan"></div>
     </body>
+
+    <script>
+        var hideTimeout;
+
+        $('#sofap').hover(
+            function() {
+                clearTimeout(hideTimeout);
+                $('#sofap').css("opacity", "100");
+                $('#sofa').css("opacity", "0");
+                $('#shanshan').css("opacity", "0");
+            },
+            function() {
+                hideTimeout = setTimeout(function() {
+                    $('#sofap').css("opacity", "0");
+                    $('#sofa').css("opacity", "100");
+                    $('#shanshan').css("opacity", "100");
+                }, 100);
+            }
+        );
+
+        $('#sofap').mousemove(function() {
+            clearTimeout(hideTimeout);
+        });
+    </script>
 </html>

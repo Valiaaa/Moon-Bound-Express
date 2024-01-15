@@ -18,7 +18,7 @@
 
     <style>
         body {
-            background-image: url("well-intentioned/background.png");
+            background-image: url("well-intentioned/bg.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
@@ -88,28 +88,39 @@
     </body>
 
     <script>
-    $('#sofap').mouseenter(function() {
-        $('#sofap').css("opacity", "100");
-        $('#sofa').css("opacity", "0");
-        $('#shanshan').css("opacity", "0");
-    });
+        var hideTimeoutSofap;
+        var hideTimeoutTrafficp;
 
-    $('#sofap').mouseleave(function() {
-        $('#sofap').css("opacity", "0");
-        $('#sofa').css("opacity", "100");
-        $('#shanshan').css("opacity", "100");
-    });
+        $('#sofap').hover(
+            function() {
+                clearTimeout(hideTimeoutSofap);
+                $('#sofap').css("opacity", "100");
+                $('#sofa').css("opacity", "0");
+                $('#shanshan').css("opacity", "0");
+            },
+            function() {
+                hideTimeoutSofap = setTimeout(function() {
+                    $('#sofap').css("opacity", "0");
+                    $('#sofa').css("opacity", "100");
+                    $('#shanshan').css("opacity", "100");
+                }, 100);
+            }
+        );
 
-    $('#trafficp').mouseenter(function() {
-        $('#trafficp').css("opacity", "100");
-        $('#traffic').css("opacity", "0");
-        $('#shanshan').css("opacity", "0");
-    });
-
-    $('#trafficp').mouseleave(function() {
-        $('#trafficp').css("opacity", "0");
-        $('#traffic').css("opacity", "100");
-        $('#shanshan').css("opacity", "100");
-    });
+        $('#trafficp').hover(
+            function() {
+                clearTimeout(hideTimeoutTrafficp);
+                $('#trafficp').css("opacity", "100");
+                $('#traffic').css("opacity", "0");
+                $('#shanshan').css("opacity", "0");
+            },
+            function() {
+                hideTimeoutTrafficp = setTimeout(function() {
+                    $('#trafficp').css("opacity", "0");
+                    $('#traffic').css("opacity", "100");
+                    $('#shanshan').css("opacity", "100");
+                }, 100);
+            }
+        );
     </script>
 </html>
