@@ -60,7 +60,7 @@
         <img src="under_the_umbrella/sofa_plain.png" style="position: fixed; left: 53vw; bottom: 25vh; width: 420px;" id="sofa">
         <img src="under_the_umbrella/sofa_sit.png" style="position: fixed; left: 53vw; bottom: 25vh; width: 420px; opacity: 0;" id="sofap">
         <img src="under_the_umbrella/tvset.png" style="position: fixed; right: 0; bottom: 0; width: 280px;">
-        <img src="under_the_umbrella/note.png" style="position: fixed; right: 4vw; top: 40vh; width: 90px;">
+        <img src="under_the_umbrella/note.png" style="position: fixed; right: 4vw; top: 40vh; width: 90px;" class="hover" id="note">
         <img src="under_the_umbrella/floormirror.png" style="position: fixed; left: 44vw; bottom: 15vh; width: 290px; pointer-events: none;">
 
         <img src="under_the_umbrella/doodleflower2.gif" style="position: fixed; left: -1.5%; bottom: 0; width: 290px;">
@@ -70,6 +70,16 @@
 
         <div class="overlay">
             <img src="under_the_umbrella/rain_fullscreen.png" class="full fullpic" style="z-index: 2;">
+        </div>
+
+        <div style="width:100%; height:100%; top:0; position: fixed; z-index: 5; display: none;" class="noteholder">
+            <img src="under_the_umbrella/note_big.png" style="width:40vw; position: fixed; left: 32vw; top:calc((100vh - 28vw) / 2)" id="notebig">
+            <img src="under_the_umbrella/photo1.png" style="width:8vw; position: fixed; left: 18vw; transform: rotate(-10deg); top: 15vh;">
+            <img src="under_the_umbrella/photo1_doodle.png" style="width:8vw; position: fixed; left: 18vw; transform: rotate(-10deg); top: 15vh; opacity: 0;" id="photo1">
+            <img src="under_the_umbrella/photo2.png" style="width:10vw; position: fixed; left: 38vw; transform: rotate(10deg); bottom: 12vh;">
+            <img src="under_the_umbrella/photo2_doodle.png" style="width:10vw; position: fixed; left: 38vw; transform: rotate(10deg); bottom: 12vh; opacity: 0;" id="photo2">
+            <img src="under_the_umbrella/photo3.png" style="width:11vw; position: fixed; right: 14vw; transform: rotate(-6deg); top: 34vh;">
+            <img src="under_the_umbrella/photo3_doodle.png" style="width:11vw; position: fixed; right: 14vw; transform: rotate(-6deg); top: 34vh; opacity: 0;" id="photo3">
         </div>
 
         <div id="shanshan"></div>
@@ -96,6 +106,35 @@
 
         $('#sofap').mousemove(function() {
             clearTimeout(hideTimeout);
+        });
+
+
+
+        $('#photo1, #photo2, #photo3').hover(
+            function() {
+                $(this).css("opacity", "1");
+            },
+            function() {
+                $(this).css("opacity", "0");
+            }
+        );
+
+
+
+        $("#note").click(function(event){
+            event.stopPropagation(); // Stop the event from reaching the document-level click event
+            $('.noteholder').css("display", "block");
+            $('.blogbutton').hide();
+            $('#shanshan').hide();
+        });
+
+        $(document).on('click', function (event) {
+            var display = $('.noteholder').css('display');
+            if (!$(event.target).closest('#photo1, #photo2, #photo3, #notebig').length && display == "block") {
+                $('.noteholder').hide();
+                $('.blogbutton').show();
+                $('#shanshan').show();
+            } else {}
         });
     </script>
 </html>
