@@ -18,11 +18,27 @@
 
     <style>
         body {
-            background-image: url("osmanthus_honey_brew/background.png");
+            background-image: url("osmanthus_honey_brew/bg.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
             overflow: hidden;
+        }
+
+        #shanshan {
+            background-image: url("osmanthus_honey_brew/dance.gif");
+            height: 385px;
+            width: 134px;
+        }
+
+        #dark {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            z-index: 5;
+            display: none;
         }
     </style>
 
@@ -50,15 +66,75 @@
 
 
         <a href="hall.html" style="width:fit-content; display: block; margin: auto;"><img src="osmanthus_honey_brew/door.png" class="door"></a>
-        <img src="osmanthus_honey_brew/wings.png" style="position: fixed; right: 14%; top: calc(46% - 233px); width: 430px;">
+        <img src="osmanthus_honey_brew/wings_plain.png" style="position: fixed; right: 14%; top: calc(46% - 233px); width: 430px;" id="wings">
+        <img src="osmanthus_honey_brew/wings_person.png" style="position: fixed; right: 14%; top: calc(46% - 233px); width: 430px; opacity: 0;" id="wingsp">
         <img src="osmanthus_honey_brew/rock.png" style="position: fixed; left: 13%; top: calc(79% - 156px); width: 430px;">
-        <img src="osmanthus_honey_brew/lamp.png" style="position: fixed; left: 16%; top: calc(79% - 220px); width: 50px;" class="hover">
-        <img src="osmanthus_honey_brew/letter.png" style="position: fixed; left: 17.5%; top: calc(79% - 130px); width: 93px;">
         <img src="osmanthus_honey_brew/rockpetals.png" style="position: fixed; left: 6%; top: calc(79% - 118px); width: 570px;">
+        <img src="osmanthus_honey_brew/lamp.png" style="position: fixed; left: 16%; top: calc(79% - 220px); width: 50px;" class="hover" id="lamp">
+        <img src="osmanthus_honey_brew/letter.png" style="position: fixed; left: 17.5%; top: calc(79% - 130px); width: 93px;" class="hover" id="letter">
 
 
-        <img src="osmanthus_honey_brew/treedoodle_fullscreen.png" class="full fullpic">
+        <img src="osmanthus_honey_brew/treedoodle_fullscreen.gif" class="full fullpic">
         <img src="osmanthus_honey_brew/groundpetals_fullscreen.png" class="full fullpic">
-        <img src="osmanthus_honey_brew/stardoodle.png" style="position: fixed; top: 62%;left: 10%; width: 80%; height: 38%; z-index: -1;">
+        <img src="osmanthus_honey_brew/stardoodle.gif" style="position: fixed; top: 62%;left: 10%; width: 80%; height: 38%; z-index: -1;">
+
+        <div id="shanshan"></div>
+        <div id="dark"></div>
+        <img src="osmanthus_honey_brew/lamp_light.png" style="position: fixed; left: 16%; top: calc(79% - 220px); width: 50px; display: none; z-index: 5;" class="hover" id="lampl">
+        <img src="osmanthus_honey_brew/novel.png" style="width:90vw; position: fixed; left: 5vw; top:calc((100vh - 24vw) / 2); z-index: 5; display: none;" id="novel">
     </body>
+
+    <script>
+        $('#wingsp').hover(
+            function() {
+                clearTimeout(hideTimeout);
+                $('#wingsp').css("opacity", "100");
+                $('#wings').css("opacity", "0");
+                $('#shanshan').css("opacity", "0");
+            },
+            function() {
+                hideTimeout = setTimeout(function() {
+                    $('#wingsp').css("opacity", "0");
+                    $('#wings').css("opacity", "100");
+                    $('#shanshan').css("opacity", "100");
+                }, 100);
+            }
+        );
+
+        $('#wingsp').mousemove(function() {
+            clearTimeout(hideTimeout);
+        });
+
+        $("#lamp").click(function(event){
+            event.stopPropagation(); // Stop the event from reaching the document-level click event
+            $('#dark').show();
+            $('#lampl').show();
+            $('.blogbutton').hide();
+            $('#shanshan').hide();
+        });
+
+        $("#lampl").click(function(event){
+            event.stopPropagation(); // Stop the event from reaching the document-level click event
+            $('#dark').hide();
+            $('#lampl').hide();
+            $('.blogbutton').show();
+            $('#shanshan').show();
+        });
+
+        $("#letter").click(function(event){
+            event.stopPropagation(); // Stop the event from reaching the document-level click event
+            $('#novel').css("display", "block");
+            $('.blogbutton').hide();
+            $('#shanshan').hide();
+        });
+
+        $(document).on('click', function (event) {
+            var display = $('#novel').css('display');
+            if (!$(event.target).closest('#novel').length && display == "block") {
+                $('#novel').hide();
+                $('.blogbutton').show();
+                $('#shanshan').show();
+            } else {}
+        });
+    </script>
 </html>

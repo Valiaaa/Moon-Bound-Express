@@ -92,12 +92,14 @@ $(".cross").click(function(){
 
 $(".blogbutton").click(function(){
     $('.blogholder').css("display","flex");
+    $('#shanshan').hide();
 });
 
 $(document).on('click', function (event) {
     var display = $('.blogholder').css('display');
     if (!$(event.target).closest('.blog').length && !$(event.target).closest('.blogbutton').length && display == "flex") {
         $('.blogholder').hide();
+        $('#shanshan').show();
     } else {}
 });
 

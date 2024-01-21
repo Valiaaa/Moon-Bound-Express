@@ -18,7 +18,7 @@
 
     <style>
         body {
-            background-image: url("four_hundred_dollars/skyocean.png");
+            background-image: url("four_hundred_dollars/bg.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
@@ -57,10 +57,11 @@
 
 
         <a href="hall.html" style="width:fit-content; display: block; margin: auto;"><img src="four_hundred_dollars/door.png" class="door"></a>
-        <img src="four_hundred_dollars/boat.png" style="position: fixed; right: calc(30% - 25px); top: calc(47% - 50px); width: 100px;">
-        <img src="four_hundred_dollars/tree1.png" style="position: fixed; left: calc(16% - 170px); top: calc(34% - 180px); width: 340px; z-index: -2;">
-        <img src="four_hundred_dollars/tree2.png" style="position: fixed; left: calc(30% - 300px); top: calc(19% - 150px); width: 590px; z-index: -2;">
-        <img src="four_hundred_dollars/tree3.png" style="position: fixed; right: calc(20% - 170px); top: calc(34% - 180px); width: 340px; z-index: -2;">
+        <img src="four_hundred_dollars/boat.png" style="position: fixed; right: calc(30% - 25px); top: calc(47% - 50px); width: 100px;" id="boat">
+        <img src="four_hundred_dollars/origami.png" style="position: fixed; left: calc(26% - 25px); bottom: calc(7% - 50px); width: 200px; display: none;" id="ppl">
+        <img src="four_hundred_dollars/tree1.gif" style="position: fixed; left: calc(16% - 170px); top: calc(34% - 180px); width: 340px; z-index: -2;">
+        <img src="four_hundred_dollars/tree2.gif" style="position: fixed; left: calc(30% - 300px); top: calc(19% - 150px); width: 590px; z-index: -2;">
+        <img src="four_hundred_dollars/tree3.gif" style="position: fixed; right: calc(18% - 170px); top: calc(34% - 180px); width: 340px; z-index: -2;">
 
 
         <img src="four_hundred_dollars/foreground.png" class="full fullpic">
@@ -69,4 +70,26 @@
 
         <div id="shanshan"></div>
     </body>
+
+    <script>
+        $('#boat').hover(
+            function() {
+                clearTimeout(hideTimeout1);
+                $('#ppl').show();
+                $('#boat').css("opacity", "0");
+                $('#shanshan').css("opacity","0");
+            },
+            function() {
+                hideTimeout1 = setTimeout(function() {
+                    $('#ppl').hide();
+                    $('#boat').css("opacity", "100");
+                    $('#shanshan').css("opacity","100");
+                }, 100);
+            }
+        );
+
+        $('#boat').mousemove(function() {
+            clearTimeout(hideTimeout1);
+        });
+    </script>
 </html>
