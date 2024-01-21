@@ -63,9 +63,16 @@
         <img src="four_hundred_dollars/tree2.gif" style="position: fixed; left: calc(30% - 300px); top: calc(19% - 150px); width: 590px; z-index: -2;">
         <img src="four_hundred_dollars/tree3.gif" style="position: fixed; right: calc(18% - 170px); top: calc(34% - 180px); width: 340px; z-index: -2;">
 
+        <img src="four_hundred_dollars/beizi.png" style="position: fixed; left: 0; bottom: 0; width: 255px;">
+        <img src="four_hundred_dollars/beizi_doodle.png" style="position: fixed; left: 0; bottom: 0; width: 255px; opacity: 0;" id="beizi">
+        <img src="four_hundred_dollars/guizi.png" style="position: fixed; right: 0; bottom: 0; width: 400px;">
+        <img src="four_hundred_dollars/guizi_doodle.png" style="position: fixed; right: 0; bottom: 0; width: 400px; opacity: 0;" id="guizi">
 
         <img src="four_hundred_dollars/foreground.png" class="full fullpic">
         <img src="four_hundred_dollars/rain_fullscreen.png" class="full fullpic">
+        <div class="overlay">
+            <img src="four_hundred_dollars/rain_fullscreen.gif" class="full fullpic" style="z-index:2;">
+        </div>
 
 
         <div id="shanshan"></div>
@@ -90,6 +97,38 @@
 
         $('#boat').mousemove(function() {
             clearTimeout(hideTimeout1);
+        });
+
+        $('#beizi').hover(
+            function() {
+                clearTimeout(hideTimeout2);
+                $('#beizi').css("opacity", "100");
+            },
+            function() {
+                hideTimeout2 = setTimeout(function() {
+                    $('#beizi').css("opacity", "0");
+                }, 100);
+            }
+        );
+
+        $('#beizi').mousemove(function() {
+            clearTimeout(hideTimeout2);
+        });
+
+        $('#guizi').hover(
+            function() {
+                clearTimeout(hideTimeout3);
+                $('#guizi').css("opacity", "100");
+            },
+            function() {
+                hideTimeout3 = setTimeout(function() {
+                    $('#guizi').css("opacity", "0");
+                }, 100);
+            }
+        );
+
+        $('#guizi').mousemove(function() {
+            clearTimeout(hideTimeout3);
         });
     </script>
 </html>
