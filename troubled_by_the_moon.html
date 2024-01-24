@@ -5,10 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="style.css"> 
         <script src="script.js"></script>
         
@@ -129,147 +126,74 @@
     </body>
 
     <script>
-        $('#metalfunc').hover(
-            function() {
-                clearTimeout(hideTimeout1);
-                $('#metal').hide();
-                $('#thedoor').show();
-            },
-            function() {
-                hideTimeout1 = setTimeout(function() {
-                    $('#metal').show();
-                    $('#thedoor').hide();
-                }, 100);
-            }
-        );
-
-        $('#metalfunc').mousemove(function() {
-            clearTimeout(hideTimeout1);
+   
+        $('#metalfunc').hover(function() {
+            $('#metal').hide();
+            $('#thedoor').show();
+        },
+        function() {
+            $('#metal').show();
+            $('#thedoor').hide();
         });
 
-        $('#rock1,#pearl1').hover(
-            function() {
-                clearTimeout(hideTimeout2);
-                $('#rock1').hide();
-                $('#pearl1').css("opacity","100");
-            },
-            function() {
-                hideTimeout2 = setTimeout(function() {
-                    $('#rock1').show();
-                    $('#pearl1').css("opacity","0");
-                }, 100);
-            }
-        );
-
-        $('#rock1,#pearl1').mousemove(function() {
-            clearTimeout(hideTimeout2);
+        $('#rock1,#pearl1').hover(function() {
+            $('#rock1').hide();
+            $('#pearl1').css("opacity","100");
+        },
+        function() {
+            $('#rock1').show();
+            $('#pearl1').css("opacity","0");
         });
 
-        $('#rock2,#pearl2').hover(
-            function() {
-                clearTimeout(hideTimeout3);
-                $('#rock2').hide();
-                $('#pearl2').css("opacity","100");
-            },
-            function() {
-                hideTimeout3 = setTimeout(function() {
-                    $('#rock2').show();
-                    $('#pearl2').css("opacity","0");
-                }, 100);
-            }
-        );
-
-        $('#rock2,#pearl2').mousemove(function() {
-            clearTimeout(hideTimeout3);
+        $('#rock2,#pearl2').hover(function() {
+            $('#rock2').hide();
+            $('#pearl2').css("opacity","100");
+        },
+        function() {
+            $('#rock2').show();
+            $('#pearl2').css("opacity","0");
         });
 
-        $('#rock3,#pearl3').hover(
-            function() {
-                clearTimeout(hideTimeout4);
-                $('#rock3').hide();
-                $('#pearl3').css("opacity","100");
-            },
-            function() {
-                hideTimeout4 = setTimeout(function() {
-                    $('#rock3').show();
-                    $('#pearl3').css("opacity","0");
-                }, 100);
-            }
-        );
-
-        $('#rock3,#pearl3').mousemove(function() {
-            clearTimeout(hideTimeout4);
+        $('#rock3,#pearl3').hover(function() {
+            $('#rock3').hide();
+            $('#pearl3').css("opacity","100");
+        },
+        function() {
+            $('#rock3').show();
+            $('#pearl3').css("opacity","0");
         });
 
-        $('#rock4,#pearl4').hover(
-            function() {
-                clearTimeout(hideTimeout5);
-                $('#rock4').hide();
-                $('#pearl4').css("opacity","100");
-            },
-            function() {
-                hideTimeout5 = setTimeout(function() {
-                    $('#rock4').show();
-                    $('#pearl4').css("opacity","0");
-                }, 100);
-            }
-        );
-
-        $('#rock4,#pearl4').mousemove(function() {
-            clearTimeout(hideTimeout5);
+        $('#rock4,#pearl4').hover(function() {
+            $('#rock4').hide();
+            $('#pearl4').css("opacity","100");
+        },
+        function() {
+            $('#rock4').show();
+            $('#pearl4').css("opacity","0");
         });
 
-        $('#radio').hover(
-            function() {
-                clearTimeout(hideTimeout6);
-                $('#ppl').show();
-                $('#shanshan').css("opacity","0");
-                
-            },
-            function() {
-                hideTimeout6 = setTimeout(function() {
-                    $('#ppl').hide();
-                    $('#shanshan').css("opacity","100");
-                }, 100);
-            }
-        );
-
-        $('#radio').mousemove(function() {
-            clearTimeout(hideTimeout6);
+        $('#radio').hover(function() {
+            $('#ppl').show();
+            $('#shanshan').css("opacity","0");
+        },
+        function() {
+            $('#ppl').hide();
+            $('#shanshan').css("opacity","100");
         });
 
-        $('.leftscreen').hover(
-            function() {
-                clearTimeout(hideTimeout7);
-                $('#lefttext').show();
-                
-            },
-            function() {
-                hideTimeout7 = setTimeout(function() {
-                    $('#lefttext').hide();
-                }, 100);
-            }
-        );
-
-        $('.rightscreen').mousemove(function() {
-            clearTimeout(hideTimeout7);
+        $('.leftscreen').hover(function() {
+            $('#lefttext').show();  
+        },
+        function() {
+            $('#lefttext').hide();
         });
 
-        $('.rightscreen').hover(
-            function() {
-                clearTimeout(hideTimeout7);
+        $('.rightscreen').hover(function() {
                 $('#righttext').show();
-                
             },
             function() {
-                hideTimeout7 = setTimeout(function() {
-                    $('#righttext').hide();
-                }, 100);
+                $('#righttext').hide();
             }
         );
-
-        $('.rightscreen').mousemove(function() {
-            clearTimeout(hideTimeout7);
-        });
     </script>
 </html>

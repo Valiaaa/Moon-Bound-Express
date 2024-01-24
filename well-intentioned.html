@@ -5,10 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="style.css"> 
         <script src="script.js"></script>
         
@@ -88,39 +85,25 @@
     </body>
 
     <script>
-        var hideTimeoutSofap;
-        var hideTimeoutTrafficp;
+        $('#sofap').hover(function() {
+            $('#sofap').css("opacity", "100");
+            $('#sofa').css("opacity", "0");
+            $('#shanshan').css("opacity", "0");
+        },
+        function() {
+            $('#sofap').css("opacity", "0");
+            $('#sofa').css("opacity", "100");
+            $('#shanshan').css("opacity", "100");
+        });
 
-        $('#sofap').hover(
-            function() {
-                clearTimeout(hideTimeoutSofap);
-                $('#sofap').css("opacity", "100");
-                $('#sofa').css("opacity", "0");
-                $('#shanshan').css("opacity", "0");
-            },
-            function() {
-                hideTimeoutSofap = setTimeout(function() {
-                    $('#sofap').css("opacity", "0");
-                    $('#sofa').css("opacity", "100");
-                    $('#shanshan').css("opacity", "100");
-                }, 100);
-            }
-        );
-
-        $('#trafficp').hover(
-            function() {
-                clearTimeout(hideTimeoutTrafficp);
-                $('#trafficp').css("opacity", "100");
-                $('#traffic').css("opacity", "0");
-                $('#shanshan').css("opacity", "0");
-            },
-            function() {
-                hideTimeoutTrafficp = setTimeout(function() {
-                    $('#trafficp').css("opacity", "0");
-                    $('#traffic').css("opacity", "100");
-                    $('#shanshan').css("opacity", "100");
-                }, 100);
-            }
-        );
+        $('#trafficp').hover(function() {
+            $('#trafficp').css("opacity", "100");
+            $('#traffic').css("opacity", "0");
+            $('#shanshan').css("opacity", "0");
+        },function() {
+            $('#trafficp').css("opacity", "0");
+            $('#traffic').css("opacity", "100");
+            $('#shanshan').css("opacity", "100");
+        });
     </script>
 </html>
