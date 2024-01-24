@@ -41,6 +41,7 @@ $("#indexdoor").click(function() {
 
 $(".cross").click(function(){
     $('.blogholder').hide();
+    $('#shanshan').show();
 });
 
 $(".blogbutton").click(function(){
