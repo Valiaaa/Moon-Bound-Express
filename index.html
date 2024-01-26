@@ -14,15 +14,60 @@
     </head>
 
     <style>
-
+        body {
+            background-image: url("hall/bg_light.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
     </style>
 
     <body>
-        <div class="full" style="display:flex;background-color: rgb(21, 21, 21);color: rgb(240, 240, 240);position: fixed;top: 0;left: 0;font-family: mingliu;font-size: 24px;justify-content: center;align-items: center;text-align: center;">
-            <div>
-                本次月向列车尚未建成，请耐心等待发车。<br><br>
-                The Moon-Bound Express is under construction, please wait patiently.
+        <div class="full windowsize">
+            <div style="width: 60%; margin: auto;">
+                本次月向列车将途径不同风景，为确保观赏体验，请乘客移至电脑端全屏使用。<br><br>
+                The Moon-Bound Express will be passing through various sceneries. To ensure your viewing experience, please move to a full-screen computer to proceed.
             </div>
         </div>
+
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="hall/light_off.png" style="width: 230px; height: auto; position: fixed; top: calc(25vh - 115px)">
+            <div style="width:72px; height:60px; position: fixed; top: calc(25vh - 31px)" class="hover" id="lightoff"></div>
+        </div>
+        <img src="hall/door.png" class="door" style="cursor: not-allowed; opacity: 0.5;" id="lightdoor">
+
+
+        <div style="display: none; align-items: center; justify-content: center;" id="darkmode">
+            <img src="hall/light_on.png" style="width: 230px; height: auto; position: fixed; top: calc(25vh - 115px)">
+            <div style="width:72px; height:60px; position: fixed; top: calc(25vh - 31px)" class="hover" id="lighton"></div>
+            <img src="hall/text.png" style="width: 60%; height: auto; position: fixed; top: calc(61vh - 250px); z-index: 5;">
+        </div>
+        <img src="hall/door_dark.png" class="door" style="display: none; cursor: not-allowed;" id="darkdoor">
+        <img src="hall/bg_dark.jpg" class="full fullpic" style="display: none;" id="darkroom">
+
+
+        <img src="hall/door.png" class="door" id="indexdoor" style="display: none;">
     </body>
+
+    <script>
+        alert("本次列车将播放音乐，请打开音量后乘坐。\n别忘了点击各车厢左上角部落格，听听列车十年里的故事。");
+
+        $("#lightoff").click(function(){
+            $('#darkroom').css("display","block");
+            $('#darkmode').css("display","flex");
+            $('#lightoff').css("display","none");
+            $('#lightdoor').css("display","none");
+            $('#darkdoor').css("display","block");
+            $('#indexdoor').css("display","none");
+        });
+
+        $("#lighton").click(function(){
+            $('#darkroom').css("display","none");
+            $('#darkmode').css("display","none");
+            $('#lightoff').css("display","block");
+            $('#indexdoor').css("display","block");
+            $('#darkdoor').css("display","none");
+        });
+    </script>
 </html>

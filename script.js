@@ -64,14 +64,22 @@ $(document).mousemove(function(e) {
   });
 
 
- // Check if the current URL ends with ".html"
- if (currentUrl.endsWith(".html")) {
-    // Check if the slug is "index.html"
-    if (currentUrl.endsWith("index.html")) {
-        var newUrl = currentUrl.replace("index.html", "");
+
+var audioElement = document.getElementById('myAudio');
+  var audioPlayed = false;
+
+  // Attach click event to the .blogbutton
+  $(".blogbutton").click(function() {
+    // Check if audio has not been played yet
+    if (!audioPlayed) {
+      // Play the audio
+      audioElement.play();
+      audioPlayed = true;
     }
-  
-    window.history.replaceState({}, document.title, newUrl);
-}
+
+    // Add your other logic for displaying the blog or any other actions
+    $('.blogholder').css("display", "flex");
+    $('#shanshan').hide();
+  });
 
 });
